@@ -15,7 +15,7 @@ public abstract class SkiPass {
         Random random = new Random();
         StringBuilder id = new StringBuilder();
         for(int i = 0; i < 10; i++){
-            int num = random.nextInt(10);
+            int num = random.nextInt(9);
             id.append(num);
         }
         return id.toString();
@@ -25,6 +25,8 @@ public abstract class SkiPass {
     public String getId() {
         return id;
     }
+
+    public int getAmountOfDays() {return dayCounter.getAmountOfDays();}
 
     public Days getDayCounter() {
         return dayCounter;
@@ -37,6 +39,8 @@ public abstract class SkiPass {
     public Rides getRideCounter() {
         return rideCounter;
     }
+
+    public int getAmountOfRides() {return rideCounter.getAmountOfRides();}
 
     public void setRideCounter(Rides rideCounter) {
         this.rideCounter = rideCounter;

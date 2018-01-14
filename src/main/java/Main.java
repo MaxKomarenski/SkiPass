@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String[] args) {
         SkiPass sp = new SkiPass_Weekend(Days.DAYS_2);
-        System.out.println(sp.getDayCounter());
-        System.out.println(sp.getRideCounter());
+        System.out.println(sp.getAmountOfDays());
+        System.out.println(sp.getAmountOfRides());
         System.out.println(sp.getId());
         System.out.println(sp.isWorked());
 
@@ -10,6 +10,7 @@ public class Main {
 
         Turnstile turnstile = new Turnstile(new SystemOfIssuance());
         turnstile.turnstile(sp);
+        System.out.println(sp.getAmountOfDays());
 
         System.out.println("----------");
         SkiPass sp2 = new SkiPass_Weekend(Days.DAYS_3);

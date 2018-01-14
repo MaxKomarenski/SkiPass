@@ -15,13 +15,13 @@ public class Turnstile {
             System.out.println("Your SkiPass isn't worked.");
             notPassed += 1;
             return false;
-        } else if(sp.getDayCounter().Amount() < 1){
+        } else if(sp.getDayCounter().getAmountOfDays() < 1){
             System.out.println("You haven't days to use SkiPass.");
             block(sp);
             notPassed += 1;
             return false;
 
-        } else if(sp.getRideCounter().Amount() < 1){
+        } else if(sp.getRideCounter().getAmountOfRides() < 1){
             System.out.println("You haven't rides to use SkiPass.");
             block(sp);
             notPassed += 1;
@@ -29,6 +29,8 @@ public class Turnstile {
         }
         System.out.println("OK");
         passed += 1;
+        sp.getDayCounter().setAmountOfDays(sp.getDayCounter().getAmountOfDays() - 1);
+        sp.getRideCounter().setAmountOfRides(sp.getRideCounter().getAmountOfRides() - 1);
         return true;
     }
 
